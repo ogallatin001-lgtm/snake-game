@@ -5,7 +5,7 @@ import random
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route("/snake-game/")
 def hello_world():
     return render_template("index.html")
 
@@ -14,4 +14,5 @@ def game():
     return render_template("game.html")
 
 if __name__ == "__main__":
+
     app.run(debug=True)
