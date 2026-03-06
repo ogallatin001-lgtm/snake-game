@@ -18,6 +18,7 @@ function direction(event) {
     else if(event.keyCode == 38 && d != "DOWN") d = "UP";
     else if(event.keyCode == 39 && d != "LEFT") d = "RIGHT";
     else if(event.keyCode == 40 && d != "UP") d = "DOWN";
+    event.preventDefault();
 }
 
 function collision(head, array) {
@@ -28,7 +29,8 @@ function collision(head, array) {
 }
 
 function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "black";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     let snakeX = snake[0].x;
     let snakeY = snake[0].y;
