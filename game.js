@@ -42,12 +42,11 @@ function draw() {
 
     // 1. Wall and Self Collision Check
     if (snakeX < 0 || snakeX >= canvas.width || snakeY < 0 || snakeY >= canvas.height || (d && collision(newHead, snake))) {
-        clearInterval(game);
-        alert("Game Over!");
-        window.location.href = "/"; // This redirects to your Flask index route
-        return;
-    }
-
+    clearInterval(game);
+    alert("Game Over!");
+    window.location.href = "index.html"; // Redirects back to the title screen
+    return;
+}
     // 2. Eating and Smart Food Respawn
     if (snakeX == food.x && snakeY == food.y) {
         let newFood;
@@ -72,5 +71,6 @@ function draw() {
     ctx.fillStyle = "red";
     ctx.fillRect(food.x, food.y, box, box);
 }
+
 
 let game = setInterval(draw, 100);
